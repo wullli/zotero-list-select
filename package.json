@@ -1,0 +1,9 @@
+{
+  "name": "zotero-list-select",
+  "version": "9.0.6",
+  "description": "Zotero plugin: select items by comma-separated list",
+  "scripts": {
+    "build": "zip -r zotero-list-select.xpi manifest.json bootstrap.js content/ -x '*.DS_Store'"
+  },
+  "license": "MIT"
+}

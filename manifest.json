@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "Zotero List Select",
+  "version": "9.0.6",
+  "description": "Select items in the current library/collection by a comma-separated list of field values",
+  "homepage_url": "https://github.com/wullli/zotero-list-select",
+  "author": "wullli",
+  "applications": {
+    "zotero": {
+      "id": "zotero-list-select@wullli.github.io",
+      "update_url": "https://github.com/wullli/zotero-list-select/releases/latest/download/update.json",
+      "strict_min_version": "9.0",
+      "strict_max_version": "10.0.*"
+    }
+  }
+}

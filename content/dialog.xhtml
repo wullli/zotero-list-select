@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="zotero-list-select-window"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  title="Select Items by List"
+  width="540"
+  height="400"
+  onload="init()">
+
+  <script src="dialog.js"/>
+
+  <html:style><![CDATA[
+    :root { font: message-box; }
+    html|textarea {
+      width: 100%;
+      font-family: monospace;
+      font-size: 12px;
+      resize: vertical;
+      flex: 1;
+    }
+    .buttons { display: flex; justify-content: flex-end; gap: 4px; margin-top: 4px; }
+  ]]></html:style>
+
+  <vbox flex="1" style="padding: 12px; gap: 8px;">
+
+    <hbox align="center" style="gap: 8px;">
+      <label value="Match field:"/>
+      <menulist id="field-select" style="min-width: 140px;">
+        <menupopup>
+          <menuitem label="Title" value="title" selected="true"/>
+          <menuitem label="DOI"   value="DOI"/>
+          <menuitem label="Year"  value="year"/>
+          <menuitem label="Extra" value="extra"/>
+        </menupopup>
+      </menulist>
+    </hbox>
+
+    <label value="Values — comma-separated or one per line. Wrap in double-quotes for values with commas:"/>
+
+    <html:textarea id="value-list" flex="1" rows="12"
+      placeholder="e.g.  10.1038/nature12373, 10.1126/science.1248506"/>
+
+    <checkbox id="case-sensitive" label="Case-sensitive matching"/>
+
+    <hbox pack="end" style="gap: 6px; margin-top: 4px;">
+      <button label="Cancel"       oncommand="window.close();"/>
+      <button label="Select Items" default="true" oncommand="doSelect();"/>
+    </hbox>
+
+  </vbox>
+</window>

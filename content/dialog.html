@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Select Items by List</title>
+  <style>
+    :root {
+      font-family: -apple-system, "Segoe UI", sans-serif;
+      font-size: 13px;
+      color-scheme: light dark;
+    }
+    body {
+      background-color: Canvas;
+      color: CanvasText;
+      margin: 0;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 500px;
+      min-height: 340px;
+      box-sizing: border-box;
+    }
+    .row { display: flex; align-items: center; gap: 8px; }
+    .radio-group { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .radio-group label { white-space: nowrap; display: flex; align-items: center; gap: 4px; }
+    label { white-space: nowrap; }
+    textarea {
+      flex: 1;
+      width: 100%;
+      font-family: monospace;
+      font-size: 12px;
+      resize: vertical;
+      box-sizing: border-box;
+      min-height: 180px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    button { min-width: 80px; }
+  </style>
+</head>
+<body>
+
+  <div class="row">
+    <span>Match field:</span>
+    <div class="radio-group">
+      <label><input type="radio" name="field" value="title" checked> Title</label>
+      <label><input type="radio" name="field" value="DOI"> DOI</label>
+      <label><input type="radio" name="field" value="year"> Year</label>
+      <label><input type="radio" name="field" value="extra"> Extra</label>
+    </div>
+  </div>
+
+  <label for="value-list">
+    Values — comma-separated or one per line. Wrap in double-quotes for values that contain commas:
+  </label>
+  <textarea id="value-list"
+    placeholder='e.g.  10.1038/nature12373, 10.1126/science.1248506&#10;or:   "A title, with a comma", Another Title'
+  ></textarea>
+
+  <div class="row">
+    <input type="checkbox" id="case-sensitive"/>
+    <label for="case-sensitive">Case-sensitive matching</label>
+  </div>
+
+  <div class="buttons">
+    <button id="btn-cancel">Cancel</button>
+    <button id="btn-select">Select Items</button>
+  </div>
+
+  <script src="dialog.js"></script>
+</body>
+</html>
