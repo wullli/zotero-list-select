@@ -13,7 +13,7 @@ Zotero 9 plugin — select items in the current library or collection by pasting
 
 ## Install
 
-1. Download `zotero-list-select.xpi` from the [latest release](https://github.com/wullli/zotero-list-select/releases/latest).
+1. Download `zotero-list-select.xpi` from the [latest release](https://github.com/wullli/zotero-list-select/releases/latest) matching your Zotero desktop version.
 2. In Zotero: **Tools → Add-ons → gear icon → Install Add-on From File…**
 3. Restart Zotero.
 
